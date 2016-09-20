@@ -7,3 +7,12 @@ C:\Users\eduarda.costa\Desktop\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\D
 C:\Users\eduarda.costa\Desktop\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
 C:\Users\eduarda.costa\Desktop\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.exe
 C:\Users\eduarda.costa\Desktop\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\david.medeiros\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.exe.config
+C:\Users\david.medeiros\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.exe
+C:\Users\david.medeiros\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\david.medeiros\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.exe
+C:\Users\david.medeiros\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\david.medeiros\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csprojResolveAssemblyReference.cache
+C:\Users\david.medeiros\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Form1.resources
+C:\Users\david.medeiros\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Properties.Resources.resources
+C:\Users\david.medeiros\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
