@@ -286,13 +286,12 @@
             // 
             // ButtonSomar
             // 
-            this.ButtonSomar.Location = new System.Drawing.Point(624, 194);
+            this.ButtonSomar.Location = new System.Drawing.Point(619, 194);
             this.ButtonSomar.Name = "ButtonSomar";
             this.ButtonSomar.Size = new System.Drawing.Size(75, 23);
             this.ButtonSomar.TabIndex = 11;
             this.ButtonSomar.Text = "Somar";
             this.ButtonSomar.UseVisualStyleBackColor = true;
-            this.ButtonSomar.Click += new System.EventHandler(this.ButtonSomar_Click);
             // 
             // Form1
             // 
