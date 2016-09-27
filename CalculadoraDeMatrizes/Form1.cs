@@ -24,7 +24,7 @@ namespace CalculadoraDeMatrizes
             PanelMatriz1.Controls.Clear();
             LinhasM1 = (int)LinhasMatriz1.Value;
             ColunasM1 = (int)ColunasMatriz1.Value;
-            Matriz.CriarMatriz(LinhasM1, ColunasM1, PanelMatriz1);
+            Matriz.CriarMatriz(PanelMatriz1, LinhasM1, ColunasM1);
         }
         
         private void ButtonCriarMatriz2_Click(object sender, EventArgs e)
@@ -32,12 +32,18 @@ namespace CalculadoraDeMatrizes
             PanelMatriz2.Controls.Clear();
             LinhasM2 = (int) LinhasMatriz2.Value;
             ColunasM2 = (int) ColunasMatriz2.Value;
-            Matriz.CriarMatriz(LinhasM2, ColunasM2, PanelMatriz2);
+            Matriz.CriarMatriz(PanelMatriz2, LinhasM2, ColunasM2);
         }
 
         private void ButtonSomar_Click(object sender, EventArgs e)
         {
             PanelMatrizResultante.Controls.Clear();
+            float[,] matriz1 = new float[LinhasM1, ColunasM1];
+            float[,] matriz2 = new float[LinhasM2, ColunasM2];
+            float[,] resultado = new float[LinhasM2, ColunasM2];
+            matriz1 = Matriz.GuardarMatriz(PanelMatriz1, LinhasM1, ColunasM1);
+            matriz2 = Matriz.GuardarMatriz(PanelMatriz2, LinhasM2, ColunasM2);
+
         }
     }
 }
