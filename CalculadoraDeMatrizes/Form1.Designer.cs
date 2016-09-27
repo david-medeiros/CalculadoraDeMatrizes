@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ButtonSomar = new System.Windows.Forms.Button();
             this.textBoxLeiDeFormação2 = new System.Windows.Forms.TextBox();
             this.textBoxLeiDeFormação1 = new System.Windows.Forms.TextBox();
             this.ColunasMatriz2 = new System.Windows.Forms.NumericUpDown();
@@ -53,8 +52,7 @@
             this.groupBoxMatriz1 = new System.Windows.Forms.GroupBox();
             this.PanelMatriz1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ButtonSubtrair = new System.Windows.Forms.Button();
-            this.ButtonMultiplicar = new System.Windows.Forms.Button();
+            this.ButtonSomar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ColunasMatriz2)).BeginInit();
@@ -78,8 +76,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.ButtonMultiplicar);
-            this.tabPage1.Controls.Add(this.ButtonSubtrair);
             this.tabPage1.Controls.Add(this.ButtonSomar);
             this.tabPage1.Controls.Add(this.textBoxLeiDeFormação2);
             this.tabPage1.Controls.Add(this.textBoxLeiDeFormação1);
@@ -105,16 +101,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Matriz";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // ButtonSomar
-            // 
-            this.ButtonSomar.Location = new System.Drawing.Point(619, 113);
-            this.ButtonSomar.Name = "ButtonSomar";
-            this.ButtonSomar.Size = new System.Drawing.Size(75, 23);
-            this.ButtonSomar.TabIndex = 11;
-            this.ButtonSomar.Text = "Somar";
-            this.ButtonSomar.UseVisualStyleBackColor = true;
-            this.ButtonSomar.Click += new System.EventHandler(this.ButtonSomar_Click);
             // 
             // textBoxLeiDeFormação2
             // 
@@ -298,25 +284,14 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ButtonSubtrair
+            // ButtonSomar
             // 
-            this.ButtonSubtrair.Location = new System.Drawing.Point(619, 152);
-            this.ButtonSubtrair.Name = "ButtonSubtrair";
-            this.ButtonSubtrair.Size = new System.Drawing.Size(75, 23);
-            this.ButtonSubtrair.TabIndex = 12;
-            this.ButtonSubtrair.Text = "Subtrair";
-            this.ButtonSubtrair.UseVisualStyleBackColor = true;
-            this.ButtonSubtrair.Click += new System.EventHandler(this.ButtonSubtrair_Click);
-            // 
-            // ButtonMultiplicar
-            // 
-            this.ButtonMultiplicar.Location = new System.Drawing.Point(618, 197);
-            this.ButtonMultiplicar.Name = "ButtonMultiplicar";
-            this.ButtonMultiplicar.Size = new System.Drawing.Size(75, 23);
-            this.ButtonMultiplicar.TabIndex = 13;
-            this.ButtonMultiplicar.Text = "Multiplicar";
-            this.ButtonMultiplicar.UseVisualStyleBackColor = true;
-            this.ButtonMultiplicar.Click += new System.EventHandler(this.ButtonMultiplicar_Click);
+            this.ButtonSomar.Location = new System.Drawing.Point(619, 194);
+            this.ButtonSomar.Name = "ButtonSomar";
+            this.ButtonSomar.Size = new System.Drawing.Size(75, 23);
+            this.ButtonSomar.TabIndex = 11;
+            this.ButtonSomar.Text = "Somar";
+            this.ButtonSomar.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -367,8 +342,6 @@
         private System.Windows.Forms.GroupBox groupBoxMatrizResultante;
         private System.Windows.Forms.Panel PanelMatrizResultante;
         private System.Windows.Forms.Button ButtonSomar;
-        private System.Windows.Forms.Button ButtonSubtrair;
-        private System.Windows.Forms.Button ButtonMultiplicar;
     }
 }
 
