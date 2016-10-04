@@ -51,10 +51,10 @@ namespace CalculadoraDeMatrizes
                     }
                     catch
                     {
-                        MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
         }
 
@@ -75,10 +75,10 @@ namespace CalculadoraDeMatrizes
                 }
                 catch
                 {
-                    MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("O número de linhas e colunas das matrizes são diferentes", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("O número de linhas e colunas das matrizes são diferentes", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void ButtonMultiplicar_Click(object sender, EventArgs e)
@@ -98,10 +98,10 @@ namespace CalculadoraDeMatrizes
                 }
                 catch
                 {
-                    MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("O número de colunas da primeira matriz e o número de linhas da segunda matriz são diferentes", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("O número de colunas da primeira matriz e o número de linhas da segunda matriz são diferentes", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void ButtonDividir_Click(object sender, EventArgs e)
@@ -121,10 +121,10 @@ namespace CalculadoraDeMatrizes
                 }
                 catch
                 {
-                    MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("O número de colunas da primeira matriz e o número de linhas da segunda matriz são diferentes", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("O número de colunas da primeira matriz e o número de linhas da segunda matriz são diferentes", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void ButtonEscalar_Click(object sender, EventArgs e)
@@ -132,8 +132,22 @@ namespace CalculadoraDeMatrizes
             float[,] matriz1 = new float[LinhasM1, ColunasM1];
             float[,] resultado = new float[LinhasM1, ColunasM1];
             matriz1 = Matriz.GuardarMatriz(PanelMatriz1, LinhasM1, ColunasM1);
-            resultado = Matriz.MultiplicarMatrizesEscalar(matriz1, (float)numericUpDownEscalar.Value);
+            resultado = Matriz.MultiplicarMatrizesEscalar(matriz1, (float)numericUpDown.Value);
             Matriz.DesenhaMatrixText(PanelMatriz1, resultado);
+        }
+
+        private void ButtonElevar_Click(object sender, EventArgs e)
+        {
+            float[,] matriz1 = Matriz.GuardarMatriz(PanelMatriz1, LinhasM1, ColunasM1);
+            try
+            {
+                float[,] resultado = Matriz.ElevarMatriz(matriz1, (int)numericUpDown.Value);
+                Matriz.DesenhaMatrixText(PanelMatriz1, resultado);
+            }
+            catch (QuadradaException ex)
+            {
+                MessageBox.Show("A matriz precisa ser quadrada para ser elevada", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -13,11 +13,11 @@ namespace CalculadoraDeMatrizes
     static class Matriz
     {
         /// <summary>
-        /// Cria matriz de ordem escolhida pelo usuário.
+        /// Cria matriz de ordem escolhida pelo usuário
         /// </summary>
-        /// <param name="linhas">Número de linhas da matriz que será criada.</param>
-        /// <param name="colunas">Número de colunas da matriz que será criada.</param>
-        /// <param name="painel">Painel em que a matriz será criada.</param>
+        /// <param name="linhas">Número de linhas da matriz que será criada</param>
+        /// <param name="colunas">Número de colunas da matriz que será criada</param>
+        /// <param name="painel">Painel em que a matriz será criada</param>
         public static void CriarMatriz(Panel painel, int linhas, int colunas)
         {
             painel.Controls.Clear();
@@ -80,11 +80,11 @@ namespace CalculadoraDeMatrizes
             }
         }
         /// <summary>
-        /// 
+        /// Soma as matrizes de 2 arrays float[,]
         /// </summary>
-        /// <param name="matrix1"></param>
-        /// <param name="matrix2"></param>
-        /// <returns></returns>
+        /// <param name="matrix1">Matriz a ser somada</param>
+        /// <param name="matrix2">Matriz a ser somada</param>
+        /// <returns>Retorna um float[,] da soma de duas matrizes</returns>
         public static float[,] SomarMatrizes(float[,] matrix1, float[,] matrix2)
         {
             float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
@@ -100,11 +100,11 @@ namespace CalculadoraDeMatrizes
             return matrixfinal;
         }
         /// <summary>
-        /// 
+        /// Subtrai as matrizes de 2 arrays float[,]
         /// </summary>
-        /// <param name="matrix1"></param>
-        /// <param name="matrix2"></param>
-        /// <returns></returns>
+        /// <param name="matrix1">Matriz a ser subtraida</param>
+        /// <param name="matrix2">Matriz a ser subtraida</param>
+        /// <returns>Retorna um float[,] da subtração de duas matrizes</returns>
         public static float [,] SubtrairMatrizes(float[,] matrix1, float[,] matrix2)
         {
             float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
@@ -120,11 +120,11 @@ namespace CalculadoraDeMatrizes
             return matrixfinal;
         }
         /// <summary>
-        /// 
+        /// Multiplica as matrizes de 2 arrays float[,]
         /// </summary>
-        /// <param name="matrix1"></param>
-        /// <param name="matrix2"></param>
-        /// <returns></returns>
+        /// <param name="matrix1">Matriz a ser multiplicada</param>
+        /// <param name="matrix2">Matriz a ser multiplicada</param>
+        /// <returns>Retorna um float[,] da multiplicação de duas matrizes</returns>
         public static float[,] MultiplicarMatrizes(float[,] matrix1, float[,] matrix2)
         {
             float[,] matrixfinal = new float[matrix1.GetLength(0), matrix2.GetLength(1)];
@@ -152,11 +152,11 @@ namespace CalculadoraDeMatrizes
             return matrixfinal;
         }
         /// <summary>
-        /// 
+        /// Divide as matrizes de 2 arrays float[,]
         /// </summary>
-        /// <param name="matrix1"></param>
-        /// <param name="matrix2"></param>
-        /// <returns></returns>
+        /// <param name="matrix1">Matriz a ser dividida</param>
+        /// <param name="matrix2">Matriz a ser dividida</param>
+        /// <returns>Retorna um float[,] da multiplicação de duas matrizes</returns>
         public static float[,] DividirMatrizes(float[,] matrix1, float[,] matrix2)
         {
             float[,] matrixfinal = new float[matrix1.GetLength(0), matrix2.GetLength(1)];
@@ -184,11 +184,11 @@ namespace CalculadoraDeMatrizes
             return matrixfinal;
         }
         /// <summary>
-        /// 
+        /// Multiplica uma matriz por um numero escalar
         /// </summary>
-        /// <param name="matriz"></param>
-        /// <param name="valor"></param>
-        /// <returns></returns>
+        /// <param name="matriz">Matriz a ser multiplicada por um número</param>
+        /// <param name="valor">Número para multiplicar a matriz</param>
+        /// <returns>A matriz multiplicada pelo numero escalar</returns>
         public static float[,] MultiplicarMatrizesEscalar(float[,] matriz, float valor)
         {
             float[,] matrixfinal = new float[matriz.GetLength(0), matriz.GetLength(1)];
@@ -202,6 +202,25 @@ namespace CalculadoraDeMatrizes
                 }
             }
             return matrixfinal;
+        }
+        /// <summary>
+        /// Elevar Matrizes a determinada potência
+        /// </summary>
+        /// <param name="matriz">Matriz a ser elevada</param>
+        /// <param name="exp">Potência que elevará a matriz</param>
+        /// <returns>Resultado da matriz elevada a determinada potência</returns>
+        public static float[,] ElevarMatriz(float[,] matriz, int exp)
+        {
+            if (matriz.GetLength(0) != matriz.GetLength(1))
+            {
+                throw new QuadradaException();
+            }
+            float[,] result = matriz;
+            for (int i = 1; i < exp; i++)
+            {
+                result = MultiplicarMatrizes(result, matriz);
+            }
+            return result;
         }
     }
 }
