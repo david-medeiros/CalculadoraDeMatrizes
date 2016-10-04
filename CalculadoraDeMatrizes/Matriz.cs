@@ -32,7 +32,7 @@ namespace CalculadoraDeMatrizes
                     Matriz[i, j].Location = new Point(j * Matriz[i, j].Width, i * Matriz[i, j].Height);
                     painel.Controls.Add(Matriz[i, j]);
                 }
-            }         
+            }
         }
         /// <summary>
         /// Guarda a matriz de um painel em um array float[,]
@@ -99,7 +99,12 @@ namespace CalculadoraDeMatrizes
             }
             return matrixfinal;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="matrix1"></param>
+        /// <param name="matrix2"></param>
+        /// <returns></returns>
         public static float [,] SubtrairMatrizes(float[,] matrix1, float[,] matrix2)
         {
             float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
@@ -114,10 +119,89 @@ namespace CalculadoraDeMatrizes
             }
             return matrixfinal;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="matrix1"></param>
+        /// <param name="matrix2"></param>
+        /// <returns></returns>
         public static float[,] MultiplicarMatrizes(float[,] matrix1, float[,] matrix2)
         {
-        
+            float[,] matrixfinal = new float[matrix1.GetLength(0), matrix2.GetLength(1)];
+            if (matrix1.GetLength(1) != matrix2.GetLength(0))
+            {
+                throw new MultiplyException();
+            }
+            for (int i = 0; i < matrix1.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix2.GetLength(1); j++)
+                {
+                    for (int c = 0; c < matrix1.GetLength(1); c++)
+                    {
+                        matrixfinal[i, j] += matrix1[i, c] * matrix2[c, j];
+                    }
+                    if (Math.Round(matrixfinal[i, j]) == 1)
+                        matrixfinal[i, j] = 1;
+                    else if (Math.Round(matrixfinal[i, j]) == 0)
+                    {
+                        matrixfinal[i, j] = 0;
+                    }
+                    else matrixfinal[i, j] = matrixfinal[i, j];
+                }
+            }
+            return matrixfinal;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="matrix1"></param>
+        /// <param name="matrix2"></param>
+        /// <returns></returns>
+        public static float[,] DividirMatrizes(float[,] matrix1, float[,] matrix2)
+        {
+            float[,] matrixfinal = new float[matrix1.GetLength(0), matrix2.GetLength(1)];
+            if (matrix1.GetLength(1) != matrix2.GetLength(0))
+            {
+                throw new MultiplyException();
+            }
+            for (int i = 0; i < matrix1.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix2.GetLength(1); j++)
+                {
+                    for (int c = 0; c < matrix1.GetLength(1); c++)
+                    {
+                        matrixfinal[i, j] += matrix1[i, c] / matrix2[c, j];
+                    }
+                    if (Math.Round(matrixfinal[i, j]) == 1)
+                        matrixfinal[i, j] = 1;
+                    else if (Math.Round(matrixfinal[i, j]) == 0)
+                    {
+                        matrixfinal[i, j] = 0;
+                    }
+                    else matrixfinal[i, j] = matrixfinal[i, j];
+                }
+            }
+            return matrixfinal;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="matriz"></param>
+        /// <param name="valor"></param>
+        /// <returns></returns>
+        public static float[,] MultiplicarMatrizesEscalar(float[,] matriz, float valor)
+        {
+            float[,] matrixfinal = new float[matriz.GetLength(0), matriz.GetLength(1)];
+            int linhas = matriz.GetLength(0);
+            int colunas = matriz.GetLength(1);
+            for (int i = 0; i < linhas; i++)
+            {
+                for (int j = 0; j < colunas; j++)
+                {
+                    matrixfinal[i, j] = matriz[i, j] * valor;
+                }
+            }
+            return matrixfinal;
         }
     }
 }

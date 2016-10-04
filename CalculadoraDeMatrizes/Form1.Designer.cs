@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ButtonMultiplicar = new System.Windows.Forms.Button();
+            this.ButtonSubtrair = new System.Windows.Forms.Button();
             this.ButtonSomar = new System.Windows.Forms.Button();
             this.textBoxLeiDeFormação2 = new System.Windows.Forms.TextBox();
             this.textBoxLeiDeFormação1 = new System.Windows.Forms.TextBox();
@@ -53,8 +55,9 @@
             this.groupBoxMatriz1 = new System.Windows.Forms.GroupBox();
             this.PanelMatriz1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ButtonSubtrair = new System.Windows.Forms.Button();
-            this.ButtonMultiplicar = new System.Windows.Forms.Button();
+            this.ButtonDividir = new System.Windows.Forms.Button();
+            this.ButtonEscalar = new System.Windows.Forms.Button();
+            this.numericUpDownEscalar = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ColunasMatriz2)).BeginInit();
@@ -64,6 +67,7 @@
             this.groupBoxMatrizResultante.SuspendLayout();
             this.groupBoxMatriz2.SuspendLayout();
             this.groupBoxMatriz1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEscalar)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -78,6 +82,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.numericUpDownEscalar);
+            this.tabPage1.Controls.Add(this.ButtonEscalar);
+            this.tabPage1.Controls.Add(this.ButtonDividir);
             this.tabPage1.Controls.Add(this.ButtonMultiplicar);
             this.tabPage1.Controls.Add(this.ButtonSubtrair);
             this.tabPage1.Controls.Add(this.ButtonSomar);
@@ -105,6 +112,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Matriz";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // ButtonMultiplicar
+            // 
+            this.ButtonMultiplicar.Location = new System.Drawing.Point(619, 208);
+            this.ButtonMultiplicar.Name = "ButtonMultiplicar";
+            this.ButtonMultiplicar.Size = new System.Drawing.Size(75, 23);
+            this.ButtonMultiplicar.TabIndex = 13;
+            this.ButtonMultiplicar.Text = "Multiplicar";
+            this.ButtonMultiplicar.UseVisualStyleBackColor = true;
+            this.ButtonMultiplicar.Click += new System.EventHandler(this.ButtonMultiplicar_Click);
+            // 
+            // ButtonSubtrair
+            // 
+            this.ButtonSubtrair.Location = new System.Drawing.Point(619, 161);
+            this.ButtonSubtrair.Name = "ButtonSubtrair";
+            this.ButtonSubtrair.Size = new System.Drawing.Size(75, 23);
+            this.ButtonSubtrair.TabIndex = 12;
+            this.ButtonSubtrair.Text = "Subtrair";
+            this.ButtonSubtrair.UseVisualStyleBackColor = true;
+            this.ButtonSubtrair.Click += new System.EventHandler(this.ButtonSubtrair_Click);
             // 
             // ButtonSomar
             // 
@@ -298,25 +325,32 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ButtonSubtrair
+            // ButtonDividir
             // 
-            this.ButtonSubtrair.Location = new System.Drawing.Point(619, 152);
-            this.ButtonSubtrair.Name = "ButtonSubtrair";
-            this.ButtonSubtrair.Size = new System.Drawing.Size(75, 23);
-            this.ButtonSubtrair.TabIndex = 12;
-            this.ButtonSubtrair.Text = "Subtrair";
-            this.ButtonSubtrair.UseVisualStyleBackColor = true;
-            this.ButtonSubtrair.Click += new System.EventHandler(this.ButtonSubtrair_Click);
+            this.ButtonDividir.Location = new System.Drawing.Point(619, 248);
+            this.ButtonDividir.Name = "ButtonDividir";
+            this.ButtonDividir.Size = new System.Drawing.Size(75, 23);
+            this.ButtonDividir.TabIndex = 14;
+            this.ButtonDividir.Text = "Dividir";
+            this.ButtonDividir.UseVisualStyleBackColor = true;
+            this.ButtonDividir.Click += new System.EventHandler(this.ButtonDividir_Click);
             // 
-            // ButtonMultiplicar
+            // ButtonEscalar
             // 
-            this.ButtonMultiplicar.Location = new System.Drawing.Point(618, 197);
-            this.ButtonMultiplicar.Name = "ButtonMultiplicar";
-            this.ButtonMultiplicar.Size = new System.Drawing.Size(75, 23);
-            this.ButtonMultiplicar.TabIndex = 13;
-            this.ButtonMultiplicar.Text = "Multiplicar";
-            this.ButtonMultiplicar.UseVisualStyleBackColor = true;
-            this.ButtonMultiplicar.Click += new System.EventHandler(this.ButtonMultiplicar_Click);
+            this.ButtonEscalar.Location = new System.Drawing.Point(13, 345);
+            this.ButtonEscalar.Name = "ButtonEscalar";
+            this.ButtonEscalar.Size = new System.Drawing.Size(75, 23);
+            this.ButtonEscalar.TabIndex = 15;
+            this.ButtonEscalar.Text = "Escalar";
+            this.ButtonEscalar.UseVisualStyleBackColor = true;
+            this.ButtonEscalar.Click += new System.EventHandler(this.ButtonEscalar_Click);
+            // 
+            // numericUpDownEscalar
+            // 
+            this.numericUpDownEscalar.Location = new System.Drawing.Point(100, 348);
+            this.numericUpDownEscalar.Name = "numericUpDownEscalar";
+            this.numericUpDownEscalar.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownEscalar.TabIndex = 16;
             // 
             // Form1
             // 
@@ -337,6 +371,7 @@
             this.groupBoxMatrizResultante.ResumeLayout(false);
             this.groupBoxMatriz2.ResumeLayout(false);
             this.groupBoxMatriz1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEscalar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,6 +404,9 @@
         private System.Windows.Forms.Button ButtonSomar;
         private System.Windows.Forms.Button ButtonSubtrair;
         private System.Windows.Forms.Button ButtonMultiplicar;
+        private System.Windows.Forms.Button ButtonDividir;
+        private System.Windows.Forms.Button ButtonEscalar;
+        private System.Windows.Forms.NumericUpDown numericUpDownEscalar;
     }
 }
 

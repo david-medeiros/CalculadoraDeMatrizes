@@ -83,7 +83,57 @@ namespace CalculadoraDeMatrizes
 
         private void ButtonMultiplicar_Click(object sender, EventArgs e)
         {
+            float[,] matriz1 = new float[LinhasM1, ColunasM1];
+            float[,] matriz2 = new float[LinhasM2, ColunasM2];
+            float[,] Resultado = new float[LinhasM2, ColunasM2];
+            matriz1 = Matriz.GuardarMatriz(PanelMatriz1, LinhasM1, ColunasM1);
+            matriz2 = Matriz.GuardarMatriz(PanelMatriz2, LinhasM2, ColunasM2);
+            Resultado = Matriz.MultiplicarMatrizes(matriz1, matriz2);
+            if (matriz1.GetLength(0) == matriz2.GetLength(0) && matriz1.GetLength(1) == matriz2.GetLength(1))
+            {
+                try
+                {
+                    Resultado = Matriz.MultiplicarMatrizes(matriz1, matriz2);
+                    Matriz.DesenhaMatrixText(PanelMatrizResultante, Resultado);
+                }
+                catch
+                {
+                    MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
+        private void ButtonDividir_Click(object sender, EventArgs e)
+        {
+            float[,] matriz1 = new float[LinhasM1, ColunasM1];
+            float[,] matriz2 = new float[LinhasM2, ColunasM2];
+            float[,] Resultado = new float[LinhasM2, ColunasM2];
+            matriz1 = Matriz.GuardarMatriz(PanelMatriz1, LinhasM1, ColunasM1);
+            matriz2 = Matriz.GuardarMatriz(PanelMatriz2, LinhasM2, ColunasM2);
+            Resultado = Matriz.DividirMatrizes(matriz1, matriz2);
+            if (matriz1.GetLength(0) == matriz2.GetLength(0) && matriz1.GetLength(1) == matriz2.GetLength(1))
+            {
+                try
+                {
+                    Resultado = Matriz.DividirMatrizes(matriz1, matriz2);
+                    Matriz.DesenhaMatrixText(PanelMatrizResultante, Resultado);
+                }
+                catch
+                {
+                    MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void ButtonEscalar_Click(object sender, EventArgs e)
+        {
+            float[,] matriz1 = new float[LinhasM1, ColunasM1];
+            float[,] resultado = new float[LinhasM1, ColunasM1];
+            matriz1 = Matriz.GuardarMatriz(PanelMatriz1, LinhasM1, ColunasM1);
+            resultado = Matriz.MultiplicarMatrizesEscalar(matriz1, (float)numericUpDownEscalar.Value);
+            Matriz.DesenhaMatrixText(PanelMatriz1, resultado);
         }
     }
 }
